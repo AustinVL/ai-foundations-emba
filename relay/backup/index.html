@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Project Relay · backup page</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="stylesheet" href="../../assets/site.css">
+<link rel="stylesheet" href="backup.css">
+<link rel="icon" href="../../assets/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="../../assets/icon-180.png">
+<script>document.documentElement.className+=" js"</script>
+</head>
+<body>
+
+<header class="top">
+  <a class="top__mark" href="../../">AI Foundations</a>
+  <p class="top__meta label">Exercise One · backup page</p>
+</header>
+
+<main class="page" id="page">
+  <p class="label" style="margin:0 0 14px">Exercise One · backup page</p>
+  <h1 class="title">Project Relay</h1>
+
+  <p class="note note--red nojs-only">This page needs JavaScript to open the exercise. Turn JavaScript on and reload,
+    or read along with someone at your table.</p>
+
+  <div class="js-only" id="app">
+
+    <!-- ------------------------------------------------------------ gate 1 -->
+    <form class="gate" id="gate1" autocomplete="off" hidden>
+      <p class="lede">Your instructor will give you a class code.</p>
+      <div class="field">
+        <label for="code1">Class code</label>
+        <input type="text" id="code1" name="code1" autocapitalize="none" autocorrect="off" spellcheck="false" autocomplete="off" inputmode="text">
+      </div>
+      <div class="launch"><button type="submit" class="btn btn--big">Open</button></div>
+      <p class="gate__msg" data-msg role="alert"></p>
+    </form>
+
+    <!-- ------------------------------------------------------------- steps -->
+    <nav class="steps" id="steps" aria-label="Steps" hidden>
+      <button type="button" data-go="1"><b>1</b><span>Role</span></button>
+      <button type="button" data-go="2"><b>2</b><span>Briefing</span></button>
+      <button type="button" data-go="3"><b>3</b><span>Report</span></button>
+      <button type="button" data-go="4"><b>4</b><span>Case</span></button>
+      <button type="button" data-go="5"><b>5</b><span>Judge</span></button>
+    </nav>
+
+    <section class="step" id="step1" hidden></section>
+    <section class="step" id="step2" hidden></section>
+    <section class="step" id="step3" hidden></section>
+    <section class="step" id="step4" hidden></section>
+    <section class="step" id="step5" hidden></section>
+  </div>
+</main>
+
+<footer class="foot">
+  <span>Your notes and answers are saved in this browser only. Nothing you type here is sent anywhere.</span>
+</footer>
+
+<script src="backup.js"></script>
+<script>if(!window.__EMBA_BACKUP_OK)document.documentElement.className=document.documentElement.className.replace(/(^|\s)js(\s|$)/g," ")</script>
+</body>
+</html>

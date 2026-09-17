@@ -55,6 +55,7 @@ a:hover { color: var(--red); }
    the last line of the page if site.js did not finish (three guards: head sets
    it, site.js removes it if it throws, the closing line removes it if site.js
    never reported success). So these two rules can never hide content. */
+[hidden] { display: none !important; }
 html:not(.js) .js-only { display: none; }
 html.js .nojs-only { display: none; }
 .print-only, .print-inline { display: none; }
