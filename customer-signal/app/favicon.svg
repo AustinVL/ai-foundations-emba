@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="32" height="32">
+  <!-- Customer Signal — the signal mark (solid variant, tuned for 16–32 px; the echo line is omitted at favicon sizes). Geometry mirrors src/components/brand/SignalMark.tsx. -->
+  <defs>
+    <clipPath id="c"><rect width="100" height="100" rx="24"/></clipPath>
+  </defs>
+  <rect width="100" height="100" rx="24" fill="#a31f34"/>
+  <g clip-path="url(#c)" fill="none" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M13 62C21 62 25 54 33 54C41 54 43 68 51 68C61 68 63 32 78 24" stroke-width="12.5"/>
+    <circle cx="79" cy="23.5" r="11.9" fill="#ffffff" stroke="none"/>
+  </g>
+</svg>

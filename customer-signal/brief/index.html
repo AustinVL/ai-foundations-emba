@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The build brief · Customer Signal · AI Foundations</title>
+<meta name="description" content="The written brief the Customer Signal app was built from.">
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="../../assets/site.css">
+<link rel="icon" href="../../assets/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="../../assets/icon-180.png">
+<script>document.documentElement.className+=" js"</script>
+</head>
+<body>
+
+<header class="top">
+  <a class="top__mark" href="../../">AI Foundations</a>
+  <p class="top__meta label">Executive MBA · MIT Sloan</p>
+</header>
+
+<main class="page">
+  <a class="crumb label" href="../">Exercise Two · Customer Signal</a>
+  <h1 class="title">The build brief</h1>
+  <p class="lede">This is the brief the app was built from, as it was given to Claude Code.</p>
+
+  <article class="prose">
+<!-- brief:start (publish_site.py renders _src/build_brief.md into this block) -->
+<h2>Customer Signal</h2>
+<h3>What I want to build</h3>
+<p>I want to build a polished web app that takes a CSV of customer reviews and turns it into a useful picture of what customers want fixed.</p>
+<p>The basic idea is:</p>
+<blockquote><p>Upload messy customer feedback → identify recurring pain points → turn those pain points into product priorities.</p></blockquote>
+<p>This is for a live vibe-coding demonstration with first-year MBA students. I want it to feel like a real product that a product manager could hand to someone else, not a dashboard built around one particular dataset.</p>
+<p>The app should be called <strong>Customer Signal</strong>, with the tagline:</p>
+<blockquote><p>Turn customer feedback into product priorities.</p></blockquote>
+<p>Create an original, modern logo for Customer Signal in Sloan red (<code>#a31f34</code>). It should feel like the identity of a real contemporary analytics product, work both prominently on the opening screen and at a smaller size in the app header, and avoid generic robot, brain, or AI-sparkle imagery.</p>
+<h3>Uploading data</h3>
+<p>The app should accept any CSV file and then ask the user to identify which columns contain:</p>
+<ul>
+<li>Review text — required</li>
+<li>Rating — optional</li>
+<li>Date — optional</li>
+<li>Review title — optional</li>
+<li>Any other columns that might be useful for comparison, such as customer segment, product, geography, or device</li>
+</ul>
+<p>It should make reasonable guesses based on the column names, while letting the user change them. Show a preview of the data before analysis begins.</p>
+<p>The app should not assume a particular company, product, or CSV structure. Review text should be the only required field. If useful optional columns are missing, the corresponding analyses should simply be omitted.</p>
+<p>The opening screen should be visually strong and simple: a large drag-and-drop area, a file picker, and a short explanation of what the app does. After the columns are mapped, the user clicks <strong>Analyze reviews</strong>.</p>
+<p>The analysis should work in a reasonable amount of time for several thousand reviews. Show progress while it runs so the app does not appear frozen.</p>
+<h3>Results</h3>
+<p>Once the analysis is complete, show a compact summary with the number of reviews analyzed, average rating if available, number of pain points found, and date range if available.</p>
+<p>Below that, use four tabs:</p>
+<ol>
+<li><strong>Priorities</strong></li>
+<li><strong>Roadmap</strong></li>
+<li><strong>Additional Insights</strong></li>
+<li><strong>Details</strong></li>
+</ol>
+<p>If the data contains useful comparison columns, add filters for them. Filtering the data should update the analysis and charts, not just the labels on the page.</p>
+<h3>1. Priorities</h3>
+<p>This should be the visual centerpiece of the app.</p>
+<p>Create a chart that places each pain point according to:</p>
+<ul>
+<li><strong>X-axis:</strong> how frequently it appears</li>
+<li><strong>Y-axis:</strong> how severe the customer experience is</li>
+<li><strong>Color:</strong> a broader category that the app derives from the pain points</li>
+</ul>
+<p>Use roughly 3–5 broader categories, but let the number vary when the data calls for it. The individual pain points should be specific enough to imply different responses. “App repeatedly disconnects” is useful; “product quality” is not.</p>
+<p>Keep the circles approximately the same size. Frequency is already represented by horizontal position, so circle size should not repeat the same information.</p>
+<p>Divide the chart into four lightly marked areas:</p>
+<div class="scroll-x"><table>
+<thead><tr>
+<th scope="col"></th>
+<th scope="col">Lower frequency</th>
+<th scope="col">Higher frequency</th>
+</tr></thead>
+<tbody>
+<tr><td><strong>Higher severity</strong></td><td>Watch closely</td><td>Fix first</td></tr>
+<tr><td><strong>Lower severity</strong></td><td>Lower priority</td><td>Improve at scale</td></tr>
+</tbody>
+</table></div>
+<p>When the user hovers over a pain point, show only its name and one representative quotation.</p>
+<p>When the user clicks it, open a window or side panel with:</p>
+<ul>
+<li>Frequency and number of matching reviews</li>
+<li>Severity</li>
+<li>Average rating, if available</li>
+<li>A short explanation of what customers are experiencing</li>
+<li>A proposed response</li>
+<li>Several representative quotations</li>
+<li>A way to inspect the underlying matching reviews</li>
+</ul>
+<p>Every quotation must come directly from the uploaded data. Do not invent or rewrite customer language.</p>
+<h3>2. Roadmap</h3>
+<p>Turn the findings into a visually impressive <strong>Now → Next → Later</strong> product roadmap.</p>
+<p>This should look like a real roadmap board, not a Markdown list or an ordinary table. Each recommendation should be a card with:</p>
+<ul>
+<li>A concrete, action-oriented recommendation</li>
+<li>A short explanation</li>
+<li>The pain point or pain points it addresses</li>
+<li>A tag for the function that would probably own it</li>
+</ul>
+<p>Possible functional tags include:</p>
+<ul>
+<li>Engineering</li>
+<li>Product / UX</li>
+<li>Customer Experience</li>
+<li>Operations</li>
+<li>Pricing / Commercial</li>
+<li>Marketing / Education</li>
+</ul>
+<p>The app can combine multiple pain points into one recommendation when they plausibly call for the same response.</p>
+<p>Do not estimate implementation effort or add a generic “customer impact” score. The reviews do not contain enough information for that. The Now/Next/Later placement is the recommendation.</p>
+<p>Clicking a roadmap card should reveal the reasoning and customer evidence behind it.</p>
+<h3>3. Additional Insights</h3>
+<p>Use whatever other columns are available to suggest 2–5 additional graphs that could help someone understand the feedback.</p>
+<p>For example:</p>
+<ul>
+<li>Are particular problems concentrated in one product or customer segment?</li>
+<li>Are complaints becoming more or less common over time?</li>
+<li>Do users on one device report an issue more often than users on another?</li>
+<li>Which pain points are most strongly associated with low ratings?</li>
+</ul>
+<p>The useful graphs will depend on the data. Do not produce a chart for every column merely because the column exists. Choose a small number of analyses that reveal the strongest or most decision-relevant patterns.</p>
+<p>Each graph should have a specific title that states the finding, followed by a short interpretation. For example:</p>
+<blockquote><p>Android users mention connection failures 2.4× as often as iOS users.</p></blockquote>
+<p>If the CSV contains no useful additional columns, show a thoughtful empty state rather than inventing an insight.</p>
+<h3>4. Details</h3>
+<p>This tab should make the analysis transparent and inspectable.</p>
+<p>Explain precisely:</p>
+<ul>
+<li>How recurring pain points were identified</li>
+<li>How reviews were assigned to one or more pain points</li>
+<li>How frequency was calculated</li>
+<li>How severity was judged</li>
+<li>How the broader categories were created</li>
+<li>How representative quotations were selected</li>
+<li>How roadmap recommendations were produced and ordered</li>
+<li>How the additional graphs were selected</li>
+</ul>
+<p>Frequency should mean the percentage of reviews that mention a pain point. A review should count only once toward a pain point even if it mentions the issue repeatedly.</p>
+<p>Severity should reflect the consequence described by the customer, not simply reverse the star rating. A review saying “I wish it came in blue” should not be treated like one saying “the battery overheated and damaged my desk.”</p>
+<p>If the analysis uses model judgments, say what the model judged. If it uses topic modeling, keywords, sentiment, ratings, or rules, identify those methods and explain how they affect the result. Do not use vague language such as “AI-powered analysis” in place of an actual explanation.</p>
+<p>Also show the current analysis settings: the uploaded filename, number of reviews, columns used, methods used, and when the analysis was run.</p>
+<h3>Visual direction</h3>
+<p>I want every page and state of the app to look impressive, modern, and intentionally designed—not just the final dashboard. The upload screen, column-mapping flow, analysis progress, each results tab, detail panels, and empty states should all have a strong visual focal point rather than feeling like forms or text placed inside boxes.</p>
+<p>Use dynamic visual elements throughout: responsive hover states, smooth chart transitions, animated analysis progress, subtle movement when filters change, and polished transitions between views. The movement should help communicate what the app is doing rather than feeling decorative or distracting.</p>
+<p>Overall, this should look like a modern product-analytics tool rather than a generic admin dashboard.</p>
+<p>Use a restrained Sloan-inspired visual style:</p>
+<ul>
+<li>Sloan red (<code>#a31f34</code>) as the main accent</li>
+<li>Charcoal text, white cards, and a light warm-gray background</li>
+<li>A distinct, readable color for each pain-point category</li>
+<li>Strong hierarchy, generous whitespace, thin rules, and compact charts</li>
+<li>Subtle motion for hovering, changing tabs, opening panels, and filtering</li>
+<li>The original Customer Signal logo used consistently across the opening screen and app header</li>
+</ul>
+<p>Avoid decorative gradients, glass effects, generic AI sparkles, oversized metric cards, and a left-hand admin sidebar. Do not use the MIT logo or present this as an official MIT product.</p>
+<p>The roadmap should feel especially polished. The priority chart should remain legible even when there are a dozen or more pain points.</p>
+<h3>A few important rules</h3>
+<ul>
+<li>Do not hard-code the results for one dataset.</li>
+<li>Do not fabricate quotations, counts, trends, or precision.</li>
+<li>Do not force every review into a pain point; positive reviews may contain none.</li>
+<li>A review may mention more than one pain point.</li>
+<li>Let the number and names of pain points respond to the data.</li>
+<li>Handle missing optional columns gracefully.</li>
+<li>Make every visible button and interaction work.</li>
+<li>Keep the methodology consistent with what the app actually does.</li>
+<li>Use whatever technical approach you think is most appropriate. I care about the behavior and finished experience, not a particular framework.</li>
+</ul>
+<h3>What counts as finished</h3>
+<p>The app is finished when I can:</p>
+<ol>
+<li>Upload an unfamiliar CSV.</li>
+<li>Map its columns and preview the data.</li>
+<li>Analyze several thousand reviews without the interface freezing.</li>
+<li>Explore the severity × frequency chart by hovering, clicking, and filtering.</li>
+<li>Inspect the customer evidence behind any pain point.</li>
+<li>View a polished Now/Next/Later roadmap.</li>
+<li>See a small set of useful analyses based on the other available columns.</li>
+<li>Understand exactly how the app produced its results.</li>
+</ol>
+<p>Please run the app, test the complete upload-to-results flow, and fix visible or functional problems before you finish. Include a short README explaining how to start it.</p>
+<p>If a missing decision would materially change the product, ask me. Otherwise, make reasonable choices and proceed.</p>
+<!-- brief:end -->
+  </article>
+</main>
+
+<footer class="foot">
+  <a href="../">Back to Customer Signal</a>
+  <a href="../worksheet/">Open the worksheet</a>
+</footer>
+
+<script src="../../assets/config.js"></script>
+<script src="../../assets/site.js"></script>
+<script>if(!window.__EMBA_OK)document.documentElement.className=document.documentElement.className.replace(/(^|\s)js(\s|$)/g," ")</script>
+</body>
+</html>
