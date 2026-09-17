@@ -3,4 +3,4 @@
    relay/index.html as a plain link, so the button also works with JavaScript off.
    Leave the quotes empty until the app is deployed. Set it with:
      python publish_site.py --relay-url https://the-app-address/               */
-window.EMBA = { relayUrl: "" };
+window.EMBA = { relayUrl: "https://relay-emba.vercel.app/" };
