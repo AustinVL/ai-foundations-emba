@@ -186,7 +186,7 @@
     if (state.done) {
       host.appendChild(text("p", "", "These are the notes you carry into the meeting."));
       host.appendChild(keptNotes());
-      stepNav(host, ["Back to roles", 1], ["Go to the table report", 3]);
+      stepNav(host, ["Back to roles", 1], ["Go to the team report", 3]);
       return;
     }
 
@@ -243,7 +243,7 @@
     var h = text("h2", "", b.title); h.style.marginTop = "48px";
     host.appendChild(h);
     host.appendChild(el("div", "", b.html));
-    host.appendChild(text("p", "note note--red", "Keep your table's output open in Claude; your instructor will tell you what to do with it."));
+    host.appendChild(text("p", "note note--red", "Keep your team's output open in Claude; your instructor will tell you what to do with it."));
     stepNav(host, ["Back to my briefing", 2], ["The complete case", 4]);
   }
 
@@ -258,7 +258,7 @@
       '<div class="launch"><button type="submit" class="btn btn--big">Open</button></div><p class="gate__msg" data-msg role="alert"></p>';
     host.appendChild(form);
     wireGate(form, "data2.json", "c2", function (d) { data2 = d; then(); });
-    stepNav(host, ["Back to the table report", 3], null);
+    stepNav(host, ["Back to the team report", 3], null);
   }
 
   function answerField(host, i, labelText, hint) {
@@ -277,10 +277,10 @@
     host.appendChild(text("h2", "", c.title));
     host.appendChild(el("div", "", c.html));
     host.appendChild(el("div", "case", data2.caseHtml));
-    host.appendChild(text("h2", "sec", "Your table's answers"));
+    host.appendChild(text("h2", "sec", "Your team's answers"));
     answerField(host, 0, "The single highest-consequence omission or distortion in your pitch", "One sentence is enough.");
     answerField(host, 1, "One change you would make to your prompt", "Say what you would add, cut, or reword.");
-    stepNav(host, ["Back to the table report", 3], ["Judge the pair", 5]);
+    stepNav(host, ["Back to the team report", 3], ["Judge the pair", 5]);
   }
 
   function renderJudge() {
