@@ -60,7 +60,7 @@
     var code = input.value;
     if (!normalize(code)) { say("Type the code first."); input.focus(); return; }
     btn.disabled = true;
-    say("Downloading the pack (about " + (cached ? mb(cached.length) : "12 MB") + "). This can take a minute on the classroom Wi-Fi.", true);
+    say("Downloading the pack (about " + (cached ? mb(cached.length) : "18 MB") + "). This can take a minute on the classroom Wi-Fi.", true);
     unlock(code).then(function (zip) {
       if (objectUrl) { try { URL.revokeObjectURL(objectUrl); } catch (e) {} }
       objectUrl = URL.createObjectURL(new Blob([zip], { type: "application/zip" }));
