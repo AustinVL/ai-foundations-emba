@@ -534,6 +534,13 @@ h2.sec + p + .dos > li:first-child { border-top: 0; }
 .claim__t { font-family: var(--display); font-size: 14px; letter-spacing: .06em; text-transform: uppercase; margin: 0; }
 .claim .field { margin-top: 16px; }
 
+/* ---------------------------------------------------------- screenshots */
+.shot { margin: 26px 0 0; }
+.shot img { display: block; max-width: 100%; height: auto; border: 1px solid var(--cloud); background: var(--paper); }
+.shot--tall img { width: min(100%, 320px); }
+.shot figcaption { margin: 10px 0 0; font-size: 15.5px; color: var(--ink); max-width: 62ch; }
+.shot + .shot { margin-top: 30px; }
+
 /* -------------------------------------------------------- notes and rails */
 .note {
   margin: 24px 0;
