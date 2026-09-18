@@ -8,10 +8,8 @@ Instructor: Austin van Loon.
 | page | what it is |
 |---|---|
 | `index.html` | the front page |
-| `exercise-one/` | Exercise One, Make something |
-| `exercise-one/exemplar/` | a document generated from a strong brief, with the brief |
-| `exercise-two/` | Exercise Two, Build your assistant |
-| `exercise-two/worksheet/` | the worksheet (saved in your browser only) |
+| `exercise-one/` | Exercise One, Make something: seven steps |
+| `exercise-two/` | Exercise Two, Build your assistant: seven steps, with the worksheet fields (saved in your browser only) |
 | `exercise-two/starter/` | the starter pack: ten public MIT Sloan EMBA pages as text files |
 | `customer-signal/` | Customer Signal, optional, after class |
 | `customer-signal/app/` | the read-only Customer Signal app |

@@ -4,109 +4,365 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Make something · Exercise One · AI Foundations</title>
-<meta name="description" content="Exercise One of AI Foundations, MIT Sloan Executive MBA: make something.">
+<meta name="description" content="Exercise One of AI Foundations, MIT Sloan Executive MBA: make something. Seven steps.">
 <meta name="robots" content="noindex">
-<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/guide.css">
 <link rel="icon" href="../assets/favicon.ico" sizes="any">
 <link rel="apple-touch-icon" href="../assets/icon-180.png">
 <script>document.documentElement.className+=" js";if(location.protocol==="http:"&&!/^(localhost|127\.|\[::1\])/.test(location.host))location.replace("https:"+location.href.slice(5))</script>
 </head>
 <body>
 
-<header class="top">
-  <a class="top__mark" href="../">AI Foundations</a>
-  <p class="top__meta label">Executive MBA · MIT Sloan</p>
-</header>
+<aside class="rail">
+  <a class="rail__home" href="../"><img class="rail__tag" src="../assets/lockup.png" width="900" height="118" alt="MIT Sloan School of Management"></a>
+  <a class="rail__chapter" href="../">
+    <span class="label">Executive MBA · September 19</span>
+    <span class="rail__chapter-t">AI Foundations</span></a>
+  <p class="rail__sec label">Exercise One</p>
+  <p class="rail__track">Make <br>something</p>
+  <p class="rail__now"></p>
 
-<main class="page">
-  <p class="label" style="margin:0 0 14px">Exercise One · 36 minutes · hands on</p>
-  <h1 class="title">Make something</h1>
-  <p class="lede">Everyone asks Claude for one thing on the same topic. What comes back depends on how you asked,
-    and on which shape you were given.</p>
+  <nav class="rail__nav" aria-label="Exercises">
+    <ul class="rail__guides">
+      <li class="rail__guide is-current" data-guide="exercise-one">
+        <a class="rail__g" href="./" aria-current="page"><span class="rail__n">02</span><span class="rail__gl">Make something</span></a>
+        <ul class="rail__index"></ul>
+      </li>
+      <li class="rail__guide" data-guide="exercise-two">
+        <a class="rail__g" href="../exercise-two/"><span class="rail__n">04</span><span class="rail__gl">Build your assistant</span></a>
+      </li>
+    </ul>
+  </nav>
 
-  <h2 class="sec">The topic</h2>
-  <div class="instruction">
-    <p>How context windows work: why long AI conversations can go wrong, and what to do about it.</p>
+  <div class="rail__foot">
+    <p class="rail__stuck">Stuck? Ask a neighbor, then raise your hand.</p>
+    <div class="meter" role="progressbar" aria-label="Progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="meter__fill"></div></div>
+    <div class="rail__read"><span data-read-step>STEP 2.1</span><span data-read-pct>0%</span></div>
   </div>
+</aside>
 
-  <p class="settings"><span class="label">Model settings for this exercise</span>
-    <b>Claude Enterprise</b> · <b>Opus 5</b> · <b>effort: Low</b></p>
-  <p>Low is a speed setting: it keeps every artifact arriving within a few minutes, so the whole group has
-    something to show.</p>
+<main class="sheet">
+<div class="col">
 
-  <h2 class="sec">Count off</h2>
-  <p>Groups of six: three in a row and the three behind them. Count off 1, 2, 3, 1, 2, 3, so every shape
-    appears twice in your group. Your number is your shape.</p>
-  <ul class="kv" aria-label="The three shapes">
-    <li><span class="n">1</span><span>a document</span></li>
-    <li><span class="n">2</span><span>a slide deck (.pptx)</span></li>
-    <li><span class="n">3</span><span>an interactive web page</span></li>
-  </ul>
-  <p style="margin-top:16px">The document people will be done first. The deck people will wait longer. That difference is
-    information about what you asked for.</p>
+<p class="nojs-note note note--warn"><b>This page is showing every step at once.</b> The script that keeps your place did not load. Read the steps in order; nothing is missing.</p>
 
-  <h2 class="sec">The floor prompt</h2>
-  <p>This is the floor. You can do better. Put your shape in the blank.</p>
-  <div class="code">
-    <div class="code__bar">
-      <span class="label">Floor prompt</span>
-      <button type="button" class="btn btn--ghost btn--small js-only no-print" data-copy-block="floor-prompt">Copy</button>
+<!-- ====================================================== 2.1 · GET SET -->
+<section class="step" data-rail="Get set">
+  <div class="step__head">
+    <span class="step__num dots" data-num="2.1"></span>
+    <div>
+      <p class="step__eyebrow label">Exercise One · Step 1 of 7</p>
+      <h1 class="step__title">Get set</h1>
     </div>
-<pre id="floor-prompt">I want to learn about the following topic:
+  </div>
+  <div class="step__body">
+    <p class="step__lede">Everyone in the room asks Claude for one thing on the same topic. What comes back depends
+      on how you asked, and on the shape you were given. First, the settings.</p>
+
+    <p class="settings"><span class="label">Model settings for this exercise</span>
+      <b>Claude Enterprise</b> · <b>Opus 5</b> · <b>effort: Low</b></p>
+    <p>Low is a speed setting for this exercise. If something does not work, ask someone next to you first,
+      then raise your hand.</p>
+
+    <h2 class="sec">Check</h2>
+    <ul class="checks">
+      <li><label class="check"><input type="checkbox" data-check="e1-account"><span class="check__box"></span>
+        <span class="check__t">Claude is open on my Sloan Enterprise account</span></label></li>
+      <li><label class="check"><input type="checkbox" data-check="e1-chat"><span class="check__box"></span>
+        <span class="check__t">A new chat is open</span></label></li>
+      <li><label class="check"><input type="checkbox" data-check="e1-model"><span class="check__box"></span>
+        <span class="check__t">The model is Opus 5</span></label></li>
+      <li><label class="check"><input type="checkbox" data-check="e1-effort"><span class="check__box"></span>
+        <span class="check__t">Effort is set to Low</span></label></li>
+    </ul>
+
+    <div class="nav">
+      <button class="btn" data-next>Next</button>
+      <span class="nav__spacer"></span>
+      <span class="nav__hint" data-hint></span>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================== 2.2 · YOUR GROUP -->
+<section class="step" data-rail="Your group, your number">
+  <div class="step__head">
+    <span class="step__num dots" data-num="2.2"></span>
+    <div>
+      <p class="step__eyebrow label">Exercise One · Step 2 of 7</p>
+      <h1 class="step__title">Your group, your number</h1>
+    </div>
+  </div>
+  <div class="step__body">
+    <p class="step__lede">Three of you in a row, turn around to the three behind you. That is your group of six.
+      Count off 1, 2, 3, 1, 2, 3.</p>
+    <p>Remember your number. The next step tells you what it means.</p>
+
+    <h2 class="sec">Check</h2>
+    <ul class="checks">
+      <li><label class="check"><input type="checkbox" data-check="e2-counted"><span class="check__box"></span>
+        <span class="check__t">We counted off and I know my number.</span></label></li>
+    </ul>
+
+    <div class="nav">
+      <button class="btn btn--ghost" data-back>Back</button>
+      <button class="btn" data-next>Next</button>
+      <span class="nav__spacer"></span>
+      <span class="nav__hint" data-hint></span>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================== 2.3 · YOUR TEAM -->
+<section class="step" data-rail="Your team">
+  <div class="step__head">
+    <span class="step__num dots" data-num="2.3"></span>
+    <div>
+      <p class="step__eyebrow label">Exercise One · Step 3 of 7</p>
+      <h1 class="step__title">Your team</h1>
+    </div>
+  </div>
+  <div class="step__body">
+    <p class="step__lede">Your number is your team, and your team is the shape you will ask for. Choose yours.</p>
+
+    <div class="team">
+      <ul class="team__picks" aria-label="Choose your team">
+        <li><button type="button" class="team__pick" data-team-pick="markdown" aria-pressed="false">
+          <span class="dots" data-num="1"></span><span class="team__pick-t">Team Markdown</span>
+          <span class="team__pick-s">a Markdown document</span></button></li>
+        <li><button type="button" class="team__pick" data-team-pick="pptx" aria-pressed="false">
+          <span class="dots" data-num="2"></span><span class="team__pick-t">Team PowerPoint</span>
+          <span class="team__pick-s">a slide deck (.pptx)</span></button></li>
+        <li><button type="button" class="team__pick" data-team-pick="web" aria-pressed="false">
+          <span class="dots" data-num="3"></span><span class="team__pick-t">Team Web Page</span>
+          <span class="team__pick-s">an interactive web page</span></button></li>
+      </ul>
+      <p class="team__none js-only" data-team-none>Choose your team above to see your prompt.</p>
+
+      <div class="team__panel" data-team-panel="markdown">
+        <p class="team__panel-t"><span class="label">Your prompt</span><b>Team Markdown · 1</b></p>
+        <div class="prompt">
+          <div class="prompt__bar"><span class="prompt__name">Floor prompt · Team Markdown</span>
+            <button class="btn-copy" type="button">Copy</button></div>
+          <p class="prompt__body" id="prompt-markdown">I want to learn about the following topic:
 
 How context windows work: why long AI conversations
 can go wrong, and what to do about it.
 
-Can you produce a ______ to teach me about this?
+Can you produce a Markdown document to teach me about this?</p>
+        </div>
+        <p>This is the floor. You can do better. Write your brief in the chat. Do not send it yet.</p>
+      </div>
 
-    1 = a document
-    2 = a slide deck (.pptx)
-    3 = an interactive web page</pre>
-  </div>
-  <p class="note note--red"><b>Write your brief before you send. Nobody sends until go.</b></p>
+      <div class="team__panel" data-team-panel="pptx">
+        <p class="team__panel-t"><span class="label">Your prompt</span><b>Team PowerPoint · 2</b></p>
+        <div class="prompt">
+          <div class="prompt__bar"><span class="prompt__name">Floor prompt · Team PowerPoint</span>
+            <button class="btn-copy" type="button">Copy</button></div>
+          <p class="prompt__body" id="prompt-pptx">I want to learn about the following topic:
 
-  <h2 class="sec">After you send</h2>
-  <p>Do not open your artifact yet. Pass your phone or laptop along the row and read each other's briefs.
-    What did the best brief in your group include that yours did not?</p>
+How context windows work: why long AI conversations
+can go wrong, and what to do about it.
 
-  <h2 class="sec">Show and share</h2>
-  <p>Two minutes each. Show your artifact to the group. The group asks one thing:</p>
-  <div class="instruction">
-    <p>What did this shape make easy, and what did it hide?</p>
-  </div>
-  <p style="margin-top:16px">The two people with the same number compare their two.</p>
+Can you produce a slide deck (.pptx) to teach me about this?</p>
+        </div>
+        <p>This is the floor. You can do better. Write your brief in the chat. Do not send it yet.</p>
+      </div>
 
-  <h2 class="sec">After the exercise: score your own artifact</h2>
-  <p>Wait for the instructor. Then tick what your artifact does. Ticks stay in this browser only.</p>
-  <form data-worksheet="emba-2026-exercise-one-checklist-v1" data-quiet autocomplete="off">
-    <ul class="ticks">
-      <li><label class="tick"><input type="checkbox" data-f="c1" value="yes" data-label="Says what a token is"> It says what a token is.</label></li>
-      <li><label class="tick"><input type="checkbox" data-f="c2" value="yes" data-label="Names the context window of a current model, with a source"> It names the context window of a current model, with a source.</label></li>
-      <li><label class="tick"><input type="checkbox" data-f="c3" value="yes" data-label="Says what happens when a conversation exceeds the window"> It says what happens when a conversation exceeds the window.</label></li>
-      <li><label class="tick"><input type="checkbox" data-f="c4" value="yes" data-label="Says why quality can drop before the limit is reached"> It says why quality can drop before the limit is reached.</label></li>
-      <li><label class="tick"><input type="checkbox" data-f="c5" value="yes" data-label="Gives at least one practical strategy"> It gives at least one practical strategy.</label></li>
+      <div class="team__panel" data-team-panel="web">
+        <p class="team__panel-t"><span class="label">Your prompt</span><b>Team Web Page · 3</b></p>
+        <div class="prompt">
+          <div class="prompt__bar"><span class="prompt__name">Floor prompt · Team Web Page</span>
+            <button class="btn-copy" type="button">Copy</button></div>
+          <p class="prompt__body" id="prompt-web">I want to learn about the following topic:
+
+How context windows work: why long AI conversations
+can go wrong, and what to do about it.
+
+Can you produce an interactive web page to teach me about this?</p>
+        </div>
+        <p>This is the floor. You can do better. Write your brief in the chat. Do not send it yet.</p>
+      </div>
+    </div>
+
+    <h2 class="sec">Check</h2>
+    <ul class="checks">
+      <li><label class="check"><input type="checkbox" data-check="e3-team"><span class="check__box"></span>
+        <span class="check__t">I chose my team</span></label></li>
+      <li><label class="check"><input type="checkbox" data-check="e3-brief"><span class="check__box"></span>
+        <span class="check__t">My brief is written and not sent</span></label></li>
     </ul>
-    <p class="ticks-actions js-only no-print"><button type="button" class="btn btn--ghost btn--small" data-clear>Clear the ticks</button></p>
-  </form>
 
-  <h2 class="sec">An exemplar</h2>
-  <nav class="index index--small" aria-label="Exemplar" style="margin-top:0">
-    <a class="entry" href="exemplar/">
-      <span class="entry__k label">Our exemplar</span>
-      <span class="entry__t">A document from a strong brief</span>
-      <span class="entry__s">Open</span>
-      <span class="entry__d">Generated at these same settings from a fuller brief. The brief is shown above the result.</span>
-    </a>
-  </nav>
+    <div class="nav">
+      <button class="btn btn--ghost" data-back>Back</button>
+      <button class="btn" data-next>Next</button>
+      <span class="nav__spacer"></span>
+      <span class="nav__hint" data-hint></span>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================== 2.4 · SEND ON GO -->
+<section class="step" data-rail="Send on go">
+  <div class="step__head">
+    <span class="step__num dots" data-num="2.4"></span>
+    <div>
+      <p class="step__eyebrow label">Exercise One · Step 4 of 7</p>
+      <h1 class="step__title">Send on go</h1>
+    </div>
+  </div>
+  <div class="step__body">
+    <p class="step__lede">When Austin says go, send it.</p>
+    <p>While it generates, tell your group how you changed the prompt from the floor, or whether you did.</p>
+
+    <h2 class="sec">Check</h2>
+    <ul class="checks">
+      <li><label class="check"><input type="checkbox" data-check="e4-sent"><span class="check__box"></span>
+        <span class="check__t">I sent it</span></label></li>
+      <li><label class="check"><input type="checkbox" data-check="e4-compared"><span class="check__box"></span>
+        <span class="check__t">We compared prompts</span></label></li>
+    </ul>
+
+    <div class="nav">
+      <button class="btn btn--ghost" data-back>Back</button>
+      <button class="btn" data-next>Next</button>
+      <span class="nav__spacer"></span>
+      <span class="nav__hint" data-hint></span>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================== 2.5 · READ YOURS -->
+<section class="step" data-rail="Read yours">
+  <div class="step__head">
+    <span class="step__num dots" data-num="2.5"></span>
+    <div>
+      <p class="step__eyebrow label">Exercise One · Step 5 of 7</p>
+      <h1 class="step__title">Read yours</h1>
+    </div>
+  </div>
+  <div class="step__body">
+    <p class="step__lede">When it arrives, read it on your own.</p>
+    <div class="modes">
+      <div class="mode"><span class="mode__n">Easy</span><span class="mode__d">What did this shape make easy?</span></div>
+      <div class="mode"><span class="mode__n">Hidden</span><span class="mode__d">What did it hide?</span></div>
+      <div class="mode"><span class="mode__n">Check</span><span class="mode__d">What would you want to check?</span></div>
+    </div>
+    <div class="note note--warn"><b>Do not show it yet.</b> Austin will say when.</div>
+
+    <h2 class="sec">Check</h2>
+    <ul class="checks">
+      <li><label class="check"><input type="checkbox" data-check="e5-read"><span class="check__box"></span>
+        <span class="check__t">I have read mine</span></label></li>
+    </ul>
+
+    <div class="nav">
+      <button class="btn btn--ghost" data-back>Back</button>
+      <button class="btn" data-next>Next</button>
+      <span class="nav__spacer"></span>
+      <span class="nav__hint" data-hint></span>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================== 2.6 · SHOW AND SHARE -->
+<section class="step" data-rail="Show and share">
+  <div class="step__head">
+    <span class="step__num dots" data-num="2.6"></span>
+    <div>
+      <p class="step__eyebrow label">Exercise One · Step 6 of 7</p>
+      <h1 class="step__title">Show and share</h1>
+    </div>
+  </div>
+  <div class="step__body">
+    <p class="step__lede">When Austin says: two minutes each. Show it; do not read it aloud.</p>
+    <p>The group asks one thing:</p>
+    <div class="note"><b>What did this shape make easy, and what did it hide?</b></div>
+    <p>Then the two of you with the same number compare your two.</p>
+
+    <h2 class="sec">Check</h2>
+    <ul class="checks">
+      <li><label class="check"><input type="checkbox" data-check="e6-shared"><span class="check__box"></span>
+        <span class="check__t">We shared</span></label></li>
+    </ul>
+
+    <div class="nav">
+      <button class="btn btn--ghost" data-back>Back</button>
+      <button class="btn" data-next>Next</button>
+      <span class="nav__spacer"></span>
+      <span class="nav__hint" data-hint></span>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================== 2.7 · SCORE IT -->
+<section class="step" data-rail="Score it">
+  <div class="step__head">
+    <span class="step__num dots" data-num="2.7"></span>
+    <div>
+      <p class="step__eyebrow label">Exercise One · Step 7 of 7</p>
+      <h1 class="step__title">Score it<br>(wait for Austin)</h1>
+    </div>
+  </div>
+  <div class="step__body">
+    <p class="step__lede">Tick what your artifact does. Your ticks are the score.</p>
+
+    <h2 class="sec">Your artifact</h2>
+    <ul class="checks checks--score">
+      <li><label class="check"><input type="checkbox" data-score="s1"><span class="check__box"></span>
+        <span class="check__t">It says what a token is</span></label></li>
+      <li><label class="check"><input type="checkbox" data-score="s2"><span class="check__box"></span>
+        <span class="check__t">It names the context window of a current model, with a source</span></label></li>
+      <li><label class="check"><input type="checkbox" data-score="s3"><span class="check__box"></span>
+        <span class="check__t">It says what happens when a conversation exceeds the window</span></label></li>
+      <li><label class="check"><input type="checkbox" data-score="s4"><span class="check__box"></span>
+        <span class="check__t">It says why quality can drop before the limit</span></label></li>
+      <li><label class="check"><input type="checkbox" data-score="s5"><span class="check__box"></span>
+        <span class="check__t">It gives at least one practical strategy</span></label></li>
+    </ul>
+    <p class="score js-only">Score: <span data-score-count><b>0</b> of 5</span></p>
+    <p>A script could score this by keyword. Cheap, consistent, and gameable.</p>
+
+    <h2 class="sec">Check</h2>
+    <ul class="checks">
+      <li><label class="check"><input type="checkbox" data-check="e7-scored"><span class="check__box"></span>
+        <span class="check__t">I scored mine</span></label></li>
+    </ul>
+
+    <div class="nav">
+      <button class="btn btn--ghost" data-back>Back</button>
+      <button class="btn" data-next>Finish</button>
+      <span class="nav__spacer"></span>
+      <span class="nav__hint" data-hint></span>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================== DONE -->
+<section class="done">
+  <span class="done__num dots" data-num="02"></span>
+  <h1 class="done__t">You made something.</h1>
+  <p class="done__p">Same task, same model, different choices. What you asked for shaped what you got, and the
+    shape you were given decided what was easy to see and what was hidden.</p>
+  <p class="done__p">Keep your artifact open. Austin will come back to it.</p>
+  <div class="nav">
+    <a class="btn btn--red" href="../">All session materials</a>
+    <button class="btn btn--ghost" data-restart>Review the steps</button>
+  </div>
+</section>
+
+</div>
 </main>
 
-<footer class="foot">
+<footer class="colophon">
   <a href="../">All session materials</a>
-  <span>No analytics. Nothing you type on this site leaves your browser.</span>
+  <span class="colophon__spacer"></span>
+  <span>Progress is saved in this browser only. Nothing you tick here is sent anywhere. Not your laptop? Start over first.</span>
+  <button class="btn-reset" type="button">Start over</button>
 </footer>
 
-<script src="../assets/config.js"></script>
-<script src="../assets/site.js"></script>
-<script>if(!window.__EMBA_OK)document.documentElement.className=document.documentElement.className.replace(/(^|\s)js(\s|$)/g," ")</script>
+<script>window.TRACK = { id: "exercise-one", title: "Make something" };</script>
+<script src="../assets/guide.js"></script>
+<script>if(!window.__GUIDE_OK)document.documentElement.className=document.documentElement.className.replace(/(^|\s)js(\s|$)/g," ")</script>
 </body>
 </html>

@@ -91,6 +91,7 @@ html.js .nojs-only { display: none; }
   text-decoration: none;
   color: var(--ink);
 }
+.top__lockup { display: block; height: 26px; width: auto; }
 .top__meta { margin: 0; }
 
 .page {
