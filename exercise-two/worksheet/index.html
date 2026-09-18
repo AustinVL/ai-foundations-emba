@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Worksheet · Build your assistant · AI Foundations</title>
+<meta name="description" content="The Exercise Two worksheet. What you type is saved in your browser only.">
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="../../assets/site.css">
+<link rel="icon" href="../../assets/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="../../assets/icon-180.png">
+<script>document.documentElement.className+=" js";if(location.protocol==="http:"&&!/^(localhost|127\.|\[::1\])/.test(location.host))location.replace("https:"+location.href.slice(5))</script>
+</head>
+<body>
+
+<header class="top">
+  <a class="top__mark" href="../../">AI Foundations</a>
+  <p class="top__meta label">Executive MBA · MIT Sloan</p>
+</header>
+
+<main class="page">
+  <a class="crumb label" href="../">Exercise Two · Build your assistant</a>
+  <p class="print-only label">AI Foundations · Executive MBA · MIT Sloan · September 19, 2026</p>
+  <h1 class="title"><span class="print-inline">Build your assistant: </span>Worksheet</h1>
+  <p class="lede">Fill this in as the exercise moves.</p>
+  <p class="no-print">What you type stays in this browser. Nothing is sent anywhere: not to the instructor,
+    not to a server. To keep a copy, copy it as text or print the page.</p>
+  <p class="note note--red nojs-only no-print">This page cannot save what you type right now, and it cannot copy it for you.
+    You can still fill it in and print it. Reloading the page may fix this.</p>
+
+  <div class="ws-bar no-print js-only">
+    <div class="actions">
+      <button type="button" class="btn" data-copy>Copy everything as text</button>
+      <button type="button" class="btn btn--ghost" data-print>Print or save as PDF</button>
+      <button type="button" class="btn btn--ghost" data-clear>Clear the worksheet</button>
+    </div>
+    <p class="ws-status" data-ws-status role="status" aria-live="polite"></p>
+    <div class="ws-fallback" data-copy-fallback hidden>
+      <label for="copybox" class="label">Select all of this and copy it</label>
+      <textarea id="copybox" readonly></textarea>
+    </div>
+  </div>
+
+  <form data-worksheet="emba-2026-exercise-two-worksheet-v1" data-ws-title="Build your assistant worksheet" autocomplete="off">
+
+    <!-- ============================================================ baseline -->
+    <section data-block="section" data-title="Baseline: the bare chat">
+      <h2 class="sec">Baseline: the bare chat</h2>
+      <p>A fresh, ordinary chat, not in a Project. Paste the task. What did it do? Tick all that apply.</p>
+      <div class="field">
+        <ul class="ticks ticks--tight" aria-label="What the bare chat did">
+          <li><label class="tick"><input type="checkbox" data-f="b_asked" value="yes" data-label="It asked for the documents"> It asked for the documents.</label></li>
+          <li><label class="tick"><input type="checkbox" data-f="b_generic" value="yes" data-label="It gave a generic plan"> It gave a generic plan.</label></li>
+          <li><label class="tick"><input type="checkbox" data-f="b_specific" value="yes" data-label="It stated specific dates, names or requirements as fact"> It stated specific dates, names or requirements as fact.</label></li>
+        </ul>
+      </div>
+      <div class="field">
+        <label for="b_claims">The specific claims it made</label>
+        <span class="hint">Underline every specific claim in its reply, and list them here: dates, names, requirements, contacts.</span>
+        <textarea id="b_claims" data-f="b_claims" data-label="The specific claims it made" rows="3"></textarea>
+      </div>
+    </section>
+
+    <!-- ============================================================== verify -->
+    <section data-block="section" data-title="Verify: two claims from the Project">
+      <h2 class="sec">Verify: two claims from the Project</h2>
+      <p>Pick two consequential claims from the Project's answer: a date, a requirement. Find each one in your documents.</p>
+
+      <div class="group" data-block="group" data-title="Claim 1">
+        <h3 class="group__t">Claim 1</h3>
+        <div class="field">
+          <label for="c1_claim">The claim</label>
+          <span class="hint">As the assistant stated it.</span>
+          <textarea id="c1_claim" data-f="c1_claim" data-label="The claim" rows="2"></textarea>
+        </div>
+        <div class="field">
+          <label for="c1_where">Where you found it</label>
+          <span class="hint">The document and the section, or "not in my documents".</span>
+          <textarea id="c1_where" data-f="c1_where" data-label="Where you found it" rows="2"></textarea>
+        </div>
+        <div class="field">
+          <fieldset class="choices">
+            <legend class="field__name">Does the document match?</legend>
+            <label class="choice"><input type="radio" name="c1_match" value="Match" data-f="c1_match" data-label="Match"> Match</label>
+            <label class="choice"><input type="radio" name="c1_match" value="Partly" data-f="c1_match" data-label="Match"> Partly</label>
+            <label class="choice"><input type="radio" name="c1_match" value="Not found" data-f="c1_match" data-label="Match"> Not found</label>
+          </fieldset>
+        </div>
+      </div>
+
+      <div class="group" data-block="group" data-title="Claim 2">
+        <h3 class="group__t">Claim 2</h3>
+        <div class="field">
+          <label for="c2_claim">The claim</label>
+          <span class="hint">Pick a different kind from Claim 1.</span>
+          <textarea id="c2_claim" data-f="c2_claim" data-label="The claim" rows="2"></textarea>
+        </div>
+        <div class="field">
+          <label for="c2_where">Where you found it</label>
+          <span class="hint">The document and the section, or "not in my documents".</span>
+          <textarea id="c2_where" data-f="c2_where" data-label="Where you found it" rows="2"></textarea>
+        </div>
+        <div class="field">
+          <fieldset class="choices">
+            <legend class="field__name">Does the document match?</legend>
+            <label class="choice"><input type="radio" name="c2_match" value="Match" data-f="c2_match" data-label="Match"> Match</label>
+            <label class="choice"><input type="radio" name="c2_match" value="Partly" data-f="c2_match" data-label="Match"> Partly</label>
+            <label class="choice"><input type="radio" name="c2_match" value="Not found" data-f="c2_match" data-label="Match"> Not found</label>
+          </fieldset>
+        </div>
+      </div>
+
+      <div class="group" data-block="group" data-title="The question it cannot answer">
+        <h3 class="group__t">The question it cannot answer</h3>
+        <div class="field">
+          <label for="u_question">The question you asked</label>
+          <span class="hint">Something your materials do not cover: parking on class weekends, a policy you know is not in there.</span>
+          <textarea id="u_question" data-f="u_question" data-label="The question you asked" rows="2"></textarea>
+        </div>
+        <div class="field">
+          <fieldset class="choices">
+            <legend class="field__name">What it did</legend>
+            <label class="choice"><input type="radio" name="u_did" value="Said the materials do not cover it" data-f="u_did" data-label="What it did"> Said the materials do not cover it</label>
+            <label class="choice"><input type="radio" name="u_did" value="Improvised an answer" data-f="u_did" data-label="What it did"> Improvised an answer</label>
+          </fieldset>
+        </div>
+        <div class="field">
+          <label for="u_detail">What it said</label>
+          <span class="hint">In a line or two. Did it suggest who to ask?</span>
+          <textarea id="u_detail" data-f="u_detail" data-label="What it said" rows="2"></textarea>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================= improve -->
+    <section data-block="section" data-title="Improve">
+      <h2 class="sec">Improve</h2>
+      <div class="field">
+        <label for="i_change">The improvement you made</label>
+        <span class="hint">What you changed in the instructions, or what you added, and why.</span>
+        <textarea id="i_change" data-f="i_change" data-label="The improvement you made" rows="3"></textarea>
+      </div>
+      <div class="field">
+        <label for="i_result">What changed in the second task</label>
+        <span class="hint">The note to your manager: what it got right, and what you would still fix by hand.</span>
+        <textarea id="i_result" data-f="i_result" data-label="What changed in the second task" rows="3"></textarea>
+      </div>
+    </section>
+
+    <!-- =========================================================== write-down -->
+    <section data-block="section" data-title="Write it down">
+      <h2 class="sec">Write it down</h2>
+      <p>This part is for you to keep. Think about your own organization.</p>
+      <div class="field">
+        <label for="w_usecase">One use case</label>
+        <span class="hint">What plays the role of these materials in your organization: policies, contracts, product specifications, service tickets?</span>
+        <textarea id="w_usecase" data-f="w_usecase" data-label="One use case" rows="3"></textarea>
+      </div>
+      <div class="field">
+        <label for="w_test">One test</label>
+        <span class="hint">Which claim would you check, against what?</span>
+        <textarea id="w_test" data-f="w_test" data-label="One test" rows="3"></textarea>
+      </div>
+      <div class="field">
+        <label for="w_decision">One decision</label>
+        <span class="hint">Would you let colleagues use it, and under what rule?</span>
+        <textarea id="w_decision" data-f="w_decision" data-label="One decision" rows="3"></textarea>
+      </div>
+    </section>
+  </form>
+</main>
+
+<footer class="foot no-print">
+  <a href="../">Back to Exercise Two</a>
+  <a href="../starter/">Starter pack</a>
+  <span>Saved in this browser only. Nothing you type here is sent anywhere.</span>
+</footer>
+
+<script src="../../assets/config.js"></script>
+<script src="../../assets/site.js"></script>
+<script>if(!window.__EMBA_OK)document.documentElement.className=document.documentElement.className.replace(/(^|\s)js(\s|$)/g," ")</script>
+</body>
+</html>

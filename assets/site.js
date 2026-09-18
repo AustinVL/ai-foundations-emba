@@ -1,7 +1,8 @@
 /* AI Foundations · Executive MBA · session site.
-   Two small jobs: turn on the Relay button from assets/config.js, and keep the
-   worksheet in this browser. Nothing here sends anything anywhere: there is no
-   fetch, no XHR, no beacon in this file.
+   Three small jobs: "Copy" buttons on the code blocks, worksheets and checklists
+   kept in this browser, and (parked, unlinked) the Relay button from
+   assets/config.js. Nothing here sends anything anywhere: there is no fetch,
+   no XHR, no beacon in this file.
 
    Each page's head puts `js` on <html>. This file takes it away again if
    anything here throws, and the last line of each page takes it away if this
@@ -11,6 +12,54 @@
   "use strict";
 
   var root = document.documentElement;
+
+  function flash(btn, msg) {
+    var was = btn.getAttribute("data-was") || btn.textContent;
+    btn.setAttribute("data-was", was);
+    btn.textContent = msg;
+    window.setTimeout(function () { btn.textContent = was; }, 2200);
+  }
+
+  /* Put text on the clipboard: the async API first, the old command as the
+     fallback. Calls done(ok). */
+  function toClipboard(text, done) {
+    function legacy() {
+      var ta = document.createElement("textarea");
+      ta.value = text;
+      ta.setAttribute("readonly", "");
+      ta.style.position = "fixed"; ta.style.top = "0"; ta.style.left = "0"; ta.style.opacity = "0";
+      document.body.appendChild(ta);
+      ta.select();
+      var ok = false;
+      try { ok = document.execCommand("copy"); } catch (e) { ok = false; }
+      document.body.removeChild(ta);
+      done(ok);
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(function () { done(true); }, legacy);
+    } else { legacy(); }
+  }
+
+  /* ------------------------------------------------------ copy a code block */
+  function copyBlocks() {
+    var btns = document.querySelectorAll("[data-copy-block]");
+    Array.prototype.forEach.call(btns, function (btn) {
+      var pre = document.getElementById(btn.getAttribute("data-copy-block"));
+      if (!pre) return;
+      btn.addEventListener("click", function () {
+        var text = pre.textContent.replace(/\s+$/, "") + "\n";
+        toClipboard(text, function (ok) {
+          if (ok) { flash(btn, "Copied"); return; }
+          flash(btn, "Select and copy");
+          var range = document.createRange();
+          range.selectNodeContents(pre);
+          var sel = window.getSelection();
+          sel.removeAllRanges();
+          sel.addRange(range);
+        });
+      });
+    });
+  }
 
   /* ------------------------------------------------------------ Relay link */
   function relay() {
@@ -26,18 +75,19 @@
   }
 
   /* ------------------------------------------------------------- worksheet */
-  var KEY = "emba-2026-customer-signal-worksheet-v1";
-
-  function worksheet() {
-    var form = document.querySelector("[data-worksheet]");
-    if (!form) return;
-
+  /* Every form with data-worksheet="storage-key" is kept in localStorage under
+     that key. Fields carry data-f="name"; radios share a name; a checkbox is
+     stored as its value when ticked and "" when not. */
+  function worksheet(form) {
+    var KEY = form.getAttribute("data-worksheet") || "emba-2026-worksheet";
     var fields = Array.prototype.slice.call(form.querySelectorAll("[data-f]"));
-    var status = document.querySelector("[data-ws-status]");
+    var status = form.parentNode.querySelector("[data-ws-status]") || document.querySelector("[data-ws-status]");
+    if (status && status.closest("form") && status.closest("form") !== form) status = null;
     var storageOk = true;
     var timer = null;
+    var quiet = form.hasAttribute("data-quiet");           /* a checklist: no status chatter */
 
-    function say(msg) { if (status) status.textContent = msg; }
+    function say(msg) { if (status && !quiet) status.textContent = msg; }
 
     function clock() {
       var d = new Date(), h = d.getHours(), m = d.getMinutes();
@@ -51,6 +101,7 @@
         var on = form.querySelector('input[name="' + el.name + '"]:checked');
         return on ? on.value : "";
       }
+      if (el.type === "checkbox") return el.checked ? (el.value || "on") : "";
       return el.value;
     }
 
@@ -77,9 +128,11 @@
       el.style.height = Math.max(96, el.scrollHeight + 2) + "px";
     }
 
-    /* the print mirror: text that grows to fit, or ruled space when empty */
+    /* the print mirror: text that grows to fit, or ruled space when empty.
+       Checkboxes print as they are, so they get no mirror. */
     function mirror(name) {
       var el = first(name);
+      if (el.type === "checkbox") return;
       var m = form.querySelector('[data-mirror="' + name + '"]');
       if (!m) {
         m = document.createElement("div");
@@ -130,6 +183,8 @@
           Array.prototype.forEach.call(form.querySelectorAll('input[name="' + el.name + '"]'), function (r) {
             r.checked = (r.value === data[n]);
           });
+        } else if (el.type === "checkbox") {
+          el.checked = data[n] !== "";
         } else {
           el.value = data[n];
         }
@@ -174,7 +229,7 @@
       var out = [];
       var rule = "------------------------------------------------------------";
       out.push("AI Foundations · Executive MBA · MIT Sloan");
-      out.push("Customer Signal worksheet · September 19, 2026");
+      out.push((form.getAttribute("data-ws-title") || "Worksheet") + " · September 19, 2026");
       out.push("");
       var blocks = form.querySelectorAll("[data-block]");
       Array.prototype.forEach.call(blocks, function (b) {
@@ -193,6 +248,7 @@
           if (seen[n]) return; seen[n] = true;
           var v = valueOf(el);
           if (el.tagName === "SELECT" && v) v = el.options[el.selectedIndex].text;
+          if (el.type === "checkbox") { out.push("[" + (v ? "x" : " ") + "] " + label(n)); out.push(""); return; }
           v = (v || "").replace(/\s+$/, "");
           out.push(label(n) + ":");
           out.push(v ? v : "(blank)");
@@ -214,43 +270,21 @@
       ta.select();
     }
 
-    function flash(btn, msg) {
-      var was = btn.getAttribute("data-was") || btn.textContent;
-      btn.setAttribute("data-was", was);
-      btn.textContent = msg;
-      window.setTimeout(function () { btn.textContent = was; }, 2200);
-    }
-
     var copyBtn = document.querySelector("[data-copy]");
-    if (copyBtn) copyBtn.addEventListener("click", function () {
+    if (copyBtn && !quiet) copyBtn.addEventListener("click", function () {
       var text = asText();
-      function legacy() {
-        var ta = document.createElement("textarea");
-        ta.value = text;
-        ta.setAttribute("readonly", "");
-        ta.style.position = "fixed"; ta.style.top = "0"; ta.style.left = "0"; ta.style.opacity = "0";
-        document.body.appendChild(ta);
-        ta.select();
-        var ok = false;
-        try { ok = document.execCommand("copy"); } catch (e) { ok = false; }
-        document.body.removeChild(ta);
+      toClipboard(text, function (ok) {
         if (ok) { flash(copyBtn, "Copied"); say("Copied. Paste it into an email or a note to keep it."); }
         else { showFallback(text); say("Select the text below and copy it."); }
-      }
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(text).then(function () {
-          flash(copyBtn, "Copied");
-          say("Copied. Paste it into an email or a note to keep it.");
-        }, legacy);
-      } else { legacy(); }
+      });
     });
 
     var printBtn = document.querySelector("[data-print]");
-    if (printBtn) printBtn.addEventListener("click", function () { refresh(); window.print(); });
+    if (printBtn && !quiet) printBtn.addEventListener("click", function () { refresh(); window.print(); });
 
-    var clearBtn = document.querySelector("[data-clear]");
+    var clearBtn = form.querySelector("[data-clear]") || (quiet ? null : document.querySelector("[data-clear]"));
     if (clearBtn) clearBtn.addEventListener("click", function () {
-      if (!window.confirm("Clear everything you typed on this worksheet? This cannot be undone.")) return;
+      if (!quiet && !window.confirm("Clear everything you typed on this worksheet? This cannot be undone.")) return;
       try { window.localStorage.removeItem(KEY); } catch (e) { /* nothing to remove */ }
       form.reset();
       refresh();
@@ -265,8 +299,9 @@
   }
 
   try {
+    copyBlocks();
     relay();
-    worksheet();
+    Array.prototype.forEach.call(document.querySelectorAll("form[data-worksheet]"), worksheet);
     window.__EMBA_OK = true;
   } catch (e) {
     root.className = root.className.replace(/(^|\s)js(\s|$)/g, " ");

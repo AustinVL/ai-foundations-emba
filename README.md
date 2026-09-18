@@ -8,11 +8,14 @@ Instructor: Austin van Loon.
 | page | what it is |
 |---|---|
 | `index.html` | the front page |
-| `relay/` | Exercise One, Project Relay |
-| `customer-signal/` | Exercise Two, Customer Signal |
+| `exercise-one/` | Exercise One, Make something |
+| `exercise-one/exemplar/` | a document generated from a strong brief, with the brief |
+| `exercise-two/` | Exercise Two, Build your assistant |
+| `exercise-two/worksheet/` | the worksheet (saved in your browser only) |
+| `exercise-two/starter/` | the starter pack: ten public MIT Sloan EMBA pages as text files |
+| `customer-signal/` | Customer Signal, optional, after class |
 | `customer-signal/app/` | the read-only Customer Signal app |
 | `customer-signal/brief/` | the brief the app was built from |
-| `customer-signal/worksheet/` | the worksheet (saved in your browser only) |
 
 Plain HTML, CSS and JavaScript. No analytics, no trackers, no external fonts.
-Nothing typed on the worksheet leaves the browser.
+Nothing typed on the worksheets leaves the browser.
