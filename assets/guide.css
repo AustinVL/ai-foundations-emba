@@ -388,6 +388,11 @@ h2.sec + p + .dos > li:first-child { border-top: 0; }
 .checks--score .check input:checked ~ .check__t { color: var(--ink); }
 .score { margin: 18px 0 0; font-family: var(--display); font-size: 15px; letter-spacing: .06em; text-transform: uppercase; color: var(--ink); }
 .score b { color: var(--red); }
+.panel { margin: 28px 0 0; padding: 18px 22px 20px; border: 1px solid var(--cloud); border-left: 3px solid var(--red); background: var(--paper); }
+.panel__eyebrow { margin: 0 0 6px; color: var(--ink); }
+.panel__eyebrow b { color: var(--red); font-family: var(--mono); }
+.panel .checks li:last-child { border-bottom: 0; }
+.panel__note { margin: 14px 0 0; font-size: 14.5px; color: var(--silver); }
 
 /* ------------------------------------------------------------ prompt cards */
 .prompt { margin: 22px 0; border: 1px solid var(--cloud); background: var(--paper); }
@@ -506,6 +511,8 @@ h2.sec + p + .dos > li:first-child { border-top: 0; }
 .field.is-missing textarea,
 .field.is-missing .choices { border-color: var(--red); animation: missing .8s ease 2; }
 .field .req { color: var(--red); font-weight: 400; font-size: 13px; letter-spacing: .1em; text-transform: uppercase; font-family: var(--mono); margin-left: 8px; }
+.field .req--opt { color: var(--silver); }
+.quiet { color: var(--silver); font-size: 15px; }
 
 .choices { display: flex; flex-wrap: wrap; gap: 10px; margin: 8px 0 0; padding: 0; border: 0; min-width: 0; }
 .choices legend { padding: 0; font-weight: 700; font-size: 16px; color: var(--ink); }
@@ -645,14 +652,14 @@ body.hub { background: var(--navy); color: var(--cloud); }
   padding: clamp(40px, 9vh, 96px) clamp(22px, 6vw, 72px) 96px;
 }
 .hub__mark { display: block; width: min(100%, 760px); height: auto; margin: 0 0 30px; }
-.hub__meta { margin: 0 0 30px; }
+.hub__meta { margin: 0 0 30px; max-width: min(100%, 760px); }
 .hub__q {
   font-family: var(--display);
   font-size: clamp(21px, 3vw, 30px);
   line-height: 1.25;
   letter-spacing: -.005em;
   color: var(--paper);
-  max-width: 24ch;
+  max-width: min(100%, 760px);
   margin: 0 0 56px;
 }
 /* a measured reveal, never a gate: everything is on the page from the first
@@ -663,8 +670,8 @@ body.hub { background: var(--navy); color: var(--cloud); }
 .hub .index { margin: 0 0 56px; }
 .hub .entry {
   display: grid;
-  grid-template-columns: 64px minmax(0, 1fr) auto;
-  gap: 10px 26px;
+  grid-template-columns: 96px minmax(0, 1fr) auto;
+  gap: 10px 40px;
   align-items: baseline;
   padding: 28px 0;
   border-top: 1px solid rgba(255, 255, 255, .22);
@@ -722,7 +729,7 @@ body.hub { background: var(--navy); color: var(--cloud); }
 .hub .small { display: block; padding: 18px 0; border-top: 1px solid rgba(255, 255, 255, .22); border-bottom: 1px solid rgba(255, 255, 255, .22); text-decoration: none; }
 .hub .small__t { font-family: var(--display); font-size: 16px; text-transform: uppercase; display: block; }
 .hub .small__d { display: block; font-size: 15px; color: var(--cloud); margin-top: 4px; max-width: 58ch; }
-.hub .foot { margin-top: 64px; padding-top: 20px; border-top: 1px solid rgba(255, 255, 255, .14); font-size: 13px; color: rgba(201, 200, 199, .78); }
+.hub .foot { margin-top: 56px; padding-top: 20px; border-top: 1px solid rgba(255, 255, 255, .14); font-size: 13px; color: rgba(201, 200, 199, .78); max-width: none; }
 
 /* ------------------------------------------------------------- responsive */
 @media (max-width: 1080px) {

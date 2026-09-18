@@ -469,16 +469,26 @@
   }
 
   /* --------------------------------------------------------------- score */
+  /* The score panel can appear on more than one step (2.5 and 2.7): every box with
+     the same data-score id is one tick, and every readout shows the same count. */
+  function scoreIds() {
+    var seen = {}, out = [];
+    Array.prototype.forEach.call(document.querySelectorAll("input[data-score]"), function (c) {
+      var id = c.getAttribute("data-score");
+      if (!seen[id]) { seen[id] = true; out.push(id); }
+    });
+    return out;
+  }
   function paintScore() {
-    var out = document.querySelector("[data-score-count]");
-    if (!out) return;
-    var all = [].slice.call(document.querySelectorAll("input[data-score]"));
-    var n = all.filter(function (c) { return c.checked; }).length;
-    out.innerHTML = "";
-    var b = document.createElement("b");
-    b.textContent = String(n);
-    out.appendChild(b);
-    out.appendChild(document.createTextNode(" of " + all.length));
+    var ids = scoreIds();
+    var n = ids.filter(function (id) { return !!state.scores[id]; }).length;
+    Array.prototype.forEach.call(document.querySelectorAll("[data-score-count]"), function (out) {
+      out.innerHTML = "";
+      var b = document.createElement("b");
+      b.textContent = String(n);
+      out.appendChild(b);
+      out.appendChild(document.createTextNode(" of " + ids.length));
+    });
   }
   function wireScore() {
     Array.prototype.forEach.call(document.querySelectorAll("input[data-score]"), function (c) {
@@ -486,6 +496,7 @@
       if (state.scores[id]) c.checked = true;
       c.addEventListener("change", function () {
         state.scores[id] = c.checked;
+        Array.prototype.forEach.call(document.querySelectorAll('input[data-score="' + id + '"]'), function (o) { o.checked = c.checked; });
         save(state);
         paintScore();
       });
@@ -500,6 +511,7 @@
     out.push("AI Foundations · Executive MBA · MIT Sloan");
     out.push((TRACK.title || "Answers") + " · September 19, 2026");
     out.push("");
+    var scoresListed = {};
     steps.forEach(function (s, i) {
       var title = s.querySelector(".step__title");
       out.push(rule);
@@ -507,6 +519,8 @@
       out.push(rule);
       out.push("");
       [].slice.call(s.querySelectorAll("input[data-check], input[data-score]")).forEach(function (c) {
+        var sid = c.getAttribute("data-score");
+        if (sid) { if (scoresListed[sid]) return; scoresListed[sid] = true; }   /* the shared panel is listed once */
         var row = c.closest(".check");
         var t = row && row.querySelector(".check__t");
         var label = t ? (t.childNodes[0] && t.childNodes[0].textContent || t.textContent).replace(/\s+/g, " ").trim() : c.getAttribute("data-check") || c.getAttribute("data-score");

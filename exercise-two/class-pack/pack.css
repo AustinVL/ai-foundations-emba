@@ -1,0 +1,7 @@
+/* Class pack page: the gate form and the download box, on top of site.css. */
+.gate { max-width: 460px; margin-top: 8px; }
+.gate input[type="text"] { font-family: var(--mono); font-size: 19px; letter-spacing: .04em; }
+.gate__msg { margin: 16px 0 0; min-height: 1.6em; font-size: 16px; color: var(--red); }
+.gate__msg.is-quiet { color: var(--silver); }
+.pack { margin: 8px 0 0; padding: 22px 24px; border: 1px solid var(--cloud); background: var(--paper); }
+.pack p:last-child { margin-bottom: 0; }

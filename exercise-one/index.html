@@ -29,7 +29,7 @@
         <ul class="rail__index"></ul>
       </li>
       <li class="rail__guide" data-guide="exercise-two">
-        <a class="rail__g" href="../exercise-two/"><span class="rail__n">04</span><span class="rail__gl">Build your assistant</span></a>
+        <a class="rail__g" href="../exercise-two/"><span class="rail__n">04</span><span class="rail__gl">Build your EMBA assistant</span></a>
       </li>
     </ul>
   </nav>
@@ -94,12 +94,13 @@
     </div>
   </div>
   <div class="step__body">
-    <p class="step__lede">Three of you in a row, turn around to the three behind you. That is your group of six.
-      Count off 1, 2, 3, 1, 2, 3.</p>
+    <p class="step__lede">Form a group of six. If you cannot find a sixth, five is fine. Count off 1, 2, 3, 1, 2, 3.</p>
     <p>Remember your number. The next step tells you what it means.</p>
 
     <h2 class="sec">Check</h2>
     <ul class="checks">
+      <li><label class="check"><input type="checkbox" data-check="e2-group"><span class="check__box"></span>
+        <span class="check__t">We have a group of five or six.</span></label></li>
       <li><label class="check"><input type="checkbox" data-check="e2-counted"><span class="check__box"></span>
         <span class="check__t">We counted off and I know my number.</span></label></li>
     </ul>
@@ -151,7 +152,7 @@ can go wrong, and what to do about it.
 
 Can you produce a Markdown document to teach me about this?</p>
         </div>
-        <p>This is the floor. You can do better. Write your brief in the chat. Do not send it yet.</p>
+        <p>This is the floor. You can do better. Write your brief and send it.</p>
       </div>
 
       <div class="team__panel" data-team-panel="pptx">
@@ -166,7 +167,7 @@ can go wrong, and what to do about it.
 
 Can you produce a slide deck (.pptx) to teach me about this?</p>
         </div>
-        <p>This is the floor. You can do better. Write your brief in the chat. Do not send it yet.</p>
+        <p>This is the floor. You can do better. Write your brief and send it.</p>
       </div>
 
       <div class="team__panel" data-team-panel="web">
@@ -181,7 +182,7 @@ can go wrong, and what to do about it.
 
 Can you produce an interactive web page to teach me about this?</p>
         </div>
-        <p>This is the floor. You can do better. Write your brief in the chat. Do not send it yet.</p>
+        <p>This is the floor. You can do better. Write your brief and send it.</p>
       </div>
     </div>
 
@@ -189,8 +190,8 @@ Can you produce an interactive web page to teach me about this?</p>
     <ul class="checks">
       <li><label class="check"><input type="checkbox" data-check="e3-team"><span class="check__box"></span>
         <span class="check__t">I chose my team</span></label></li>
-      <li><label class="check"><input type="checkbox" data-check="e3-brief"><span class="check__box"></span>
-        <span class="check__t">My brief is written and not sent</span></label></li>
+      <li><label class="check"><input type="checkbox" data-check="e3-sent"><span class="check__box"></span>
+        <span class="check__t">I sent my brief</span></label></li>
     </ul>
 
     <div class="nav">
@@ -202,23 +203,20 @@ Can you produce an interactive web page to teach me about this?</p>
   </div>
 </section>
 
-<!-- ====================================================== 2.4 · SEND ON GO -->
-<section class="step" data-rail="Send on go">
+<!-- ====================================================== 2.4 · WHILE IT GENERATES -->
+<section class="step" data-rail="While it generates">
   <div class="step__head">
     <span class="step__num dots" data-num="2.4"></span>
     <div>
       <p class="step__eyebrow label">Exercise One · Step 4 of 7</p>
-      <h1 class="step__title">Send on go</h1>
+      <h1 class="step__title">While it generates</h1>
     </div>
   </div>
   <div class="step__body">
-    <p class="step__lede">When Austin says go, send it.</p>
-    <p>While it generates, tell your group how you changed the prompt from the floor, or whether you did.</p>
+    <p class="step__lede">Tell your group how you changed the prompt from the floor, or whether you did.</p>
 
     <h2 class="sec">Check</h2>
     <ul class="checks">
-      <li><label class="check"><input type="checkbox" data-check="e4-sent"><span class="check__box"></span>
-        <span class="check__t">I sent it</span></label></li>
       <li><label class="check"><input type="checkbox" data-check="e4-compared"><span class="check__box"></span>
         <span class="check__t">We compared prompts</span></label></li>
     </ul>
@@ -242,13 +240,25 @@ Can you produce an interactive web page to teach me about this?</p>
     </div>
   </div>
   <div class="step__body">
-    <p class="step__lede">When it arrives, read it on your own.</p>
-    <div class="modes">
-      <div class="mode"><span class="mode__n">Easy</span><span class="mode__d">What did this shape make easy?</span></div>
-      <div class="mode"><span class="mode__n">Hidden</span><span class="mode__d">What did it hide?</span></div>
-      <div class="mode"><span class="mode__n">Check</span><span class="mode__d">What would you want to check?</span></div>
-    </div>
+    <p class="step__lede">When it arrives, read it on your own. Score it against the checklist below.</p>
     <div class="note note--warn"><b>Do not show it yet.</b> Austin will say when.</div>
+
+    <div class="panel" data-score-panel>
+      <p class="panel__eyebrow label">Score it · <span data-score-count><b>0</b> of 5</span></p>
+      <ul class="checks checks--score">
+        <li><label class="check"><input type="checkbox" data-score="s1"><span class="check__box"></span>
+          <span class="check__t">It says what a token is</span></label></li>
+        <li><label class="check"><input type="checkbox" data-score="s2"><span class="check__box"></span>
+          <span class="check__t">It names the context window of a current model, with a source</span></label></li>
+        <li><label class="check"><input type="checkbox" data-score="s3"><span class="check__box"></span>
+          <span class="check__t">It says what happens when a conversation exceeds the window</span></label></li>
+        <li><label class="check"><input type="checkbox" data-score="s4"><span class="check__box"></span>
+          <span class="check__t">It says why quality can drop before the limit</span></label></li>
+        <li><label class="check"><input type="checkbox" data-score="s5"><span class="check__box"></span>
+          <span class="check__t">It gives at least one practical strategy</span></label></li>
+      </ul>
+      <p class="panel__note">A script could score this by keyword. Cheap, consistent, and gameable.</p>
+    </div>
 
     <h2 class="sec">Check</h2>
     <ul class="checks">
@@ -275,10 +285,12 @@ Can you produce an interactive web page to teach me about this?</p>
     </div>
   </div>
   <div class="step__body">
-    <p class="step__lede">When Austin says: two minutes each. Show it; do not read it aloud.</p>
-    <p>The group asks one thing:</p>
-    <div class="note"><b>What did this shape make easy, and what did it hide?</b></div>
-    <p>Then the two of you with the same number compare your two.</p>
+    <p class="step__lede">When Austin says: two minutes each. Show it.</p>
+    <div class="modes">
+      <div class="mode"><span class="mode__n">Learned</span><span class="mode__d">Say what you learned.</span></div>
+      <div class="mode"><span class="mode__n">Format</span><span class="mode__d">Say what you liked and disliked about this format.</span></div>
+    </div>
+    <p style="margin-top:20px">Then the two of you with the same number compare your two.</p>
 
     <h2 class="sec">Check</h2>
     <ul class="checks">
@@ -301,27 +313,28 @@ Can you produce an interactive web page to teach me about this?</p>
     <span class="step__num dots" data-num="2.7"></span>
     <div>
       <p class="step__eyebrow label">Exercise One · Step 7 of 7</p>
-      <h1 class="step__title">Score it<br>(wait for Austin)</h1>
+      <h1 class="step__title">Score it</h1>
     </div>
   </div>
   <div class="step__body">
-    <p class="step__lede">Tick what your artifact does. Your ticks are the score.</p>
+    <p class="step__lede">Your ticks from step 5 are here. Check them once more; your ticks are the score.</p>
 
-    <h2 class="sec">Your artifact</h2>
-    <ul class="checks checks--score">
-      <li><label class="check"><input type="checkbox" data-score="s1"><span class="check__box"></span>
-        <span class="check__t">It says what a token is</span></label></li>
-      <li><label class="check"><input type="checkbox" data-score="s2"><span class="check__box"></span>
-        <span class="check__t">It names the context window of a current model, with a source</span></label></li>
-      <li><label class="check"><input type="checkbox" data-score="s3"><span class="check__box"></span>
-        <span class="check__t">It says what happens when a conversation exceeds the window</span></label></li>
-      <li><label class="check"><input type="checkbox" data-score="s4"><span class="check__box"></span>
-        <span class="check__t">It says why quality can drop before the limit</span></label></li>
-      <li><label class="check"><input type="checkbox" data-score="s5"><span class="check__box"></span>
-        <span class="check__t">It gives at least one practical strategy</span></label></li>
-    </ul>
-    <p class="score js-only">Score: <span data-score-count><b>0</b> of 5</span></p>
-    <p>A script could score this by keyword. Cheap, consistent, and gameable.</p>
+    <div class="panel" data-score-panel>
+      <p class="panel__eyebrow label">Score it · <span data-score-count><b>0</b> of 5</span></p>
+      <ul class="checks checks--score">
+        <li><label class="check"><input type="checkbox" data-score="s1"><span class="check__box"></span>
+          <span class="check__t">It says what a token is</span></label></li>
+        <li><label class="check"><input type="checkbox" data-score="s2"><span class="check__box"></span>
+          <span class="check__t">It names the context window of a current model, with a source</span></label></li>
+        <li><label class="check"><input type="checkbox" data-score="s3"><span class="check__box"></span>
+          <span class="check__t">It says what happens when a conversation exceeds the window</span></label></li>
+        <li><label class="check"><input type="checkbox" data-score="s4"><span class="check__box"></span>
+          <span class="check__t">It says why quality can drop before the limit</span></label></li>
+        <li><label class="check"><input type="checkbox" data-score="s5"><span class="check__box"></span>
+          <span class="check__t">It gives at least one practical strategy</span></label></li>
+      </ul>
+      <p class="panel__note">A script could score this by keyword. Cheap, consistent, and gameable.</p>
+    </div>
 
     <h2 class="sec">Check</h2>
     <ul class="checks">
