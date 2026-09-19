@@ -327,6 +327,7 @@ h2.sec + p + .dos > li:first-child { border-top: 0; }
   color: var(--red);
 }
 .dos b { color: var(--ink); font-weight: 700; }
+.dos--q > li { padding-top: 12px; padding-bottom: 12px; }
 .dos small { display: block; color: var(--silver); font-size: 14px; margin-top: 2px; max-width: 58ch; }
 
 /* ---------------------------------------------------------------- checks */
