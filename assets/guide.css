@@ -676,13 +676,6 @@ body.hub { background: var(--navy); color: var(--cloud); }
 .js .hub__rise.is-in, html.still .hub__rise { opacity: 1; transform: none; }
 
 .hub .index { margin: 0 0 56px; }
-.hub .hub__group { margin: 36px 0 6px; }
-.hub .hub__group:first-child { margin-top: 0; }
-/* the two files on the Ask it twice page, as text, for when a download will not work */
-.fallback { margin: 26px 0 0; }
-.fallback summary { cursor: pointer; font-size: 15.5px; color: var(--ink); padding: 10px 0; }
-.fallback summary:hover { color: var(--red); }
-.fallback[open] summary { border-bottom: 1px solid var(--hair); }
 .hub .entry {
   display: grid;
   grid-template-columns: 96px minmax(0, 1fr) auto;
