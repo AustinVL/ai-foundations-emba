@@ -509,7 +509,7 @@
     var out = [];
     var rule = "------------------------------------------------------------";
     out.push("AI Foundations · Executive MBA · MIT Sloan");
-    out.push((TRACK.title || "Answers") + " · September 19, 2026");
+    out.push((TRACK.title || "Answers") + " · " + (TRACK.date || "September 19, 2026"));
     out.push("");
     var scoresListed = {};
     steps.forEach(function (s, i) {

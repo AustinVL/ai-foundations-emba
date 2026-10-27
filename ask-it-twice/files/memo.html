@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The CFO’s memo · Ask it twice · AI Foundations</title>
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="../../assets/guide.css">
+<link rel="icon" href="../../assets/favicon.ico" sizes="any">
+<style>
+  .doc { max-width: 720px; margin: 0 auto; padding: clamp(32px, 6vh, 64px) clamp(20px, 5vw, 48px) 96px; }
+  .doc h1 { font-family: var(--display); font-size: 24px; text-transform: uppercase; color: var(--ink); margin: 6px 0 22px; }
+  .doc table { border-collapse: collapse; width: 100%; margin: 14px 0; font-size: 15.5px; }
+  .doc th, .doc td { text-align: left; padding: 7px 10px; border-bottom: 1px solid var(--hair); }
+  .doc td.n, .doc th.n { text-align: right; }
+  .doc h2 { font-size: 16px; margin: 26px 0 6px; color: var(--ink); }
+  .doc ul { padding-left: 20px; }
+  .meta { font-size: 15px; color: var(--silver); margin: 0 0 4px; }
+  .actions { margin: 28px 0 0; display: flex; gap: 12px; flex-wrap: wrap; }
+</style>
+</head>
+<body>
+<main class="doc">
+  <p class="label">A fictional company · Ask it twice · file 1 of 2</p>
+  <h1>Memo</h1>
+  <p class="meta"><b>To:</b> Executive leadership team</p>
+  <p class="meta"><b>From:</b> Dana Whitfield, Chief Financial Officer</p>
+  <p class="meta"><b>Date:</b> October 19, 2026</p>
+  <p class="meta"><b>Re:</b> Proposed 12% price increase, Mid tier</p>
+
+  <h2>Summary</h2>
+  <p>We propose raising the Mid-tier price from $180 to $201.60 per month, effective at the start of next quarter.
+    Finance projects that the increase raises revenue over the next 12 months, even after the extra churn and downgrades
+    we expect. Details and assumptions are below.</p>
+
+  <h2>Current book of business (as of October 1, 2026)</h2>
+  <table>
+    <tr><th>Tier</th><th class="n">Accounts</th><th class="n">Price / month</th><th class="n">MRR</th><th class="n">Monthly churn</th></tr>
+    <tr><td>Entry</td><td class="n">1,260</td><td class="n">$65</td><td class="n">$81,900</td><td class="n">3.8%</td></tr>
+    <tr><td>Mid</td><td class="n">2,604</td><td class="n">$180</td><td class="n">$468,720</td><td class="n">2.1%</td></tr>
+    <tr><td>Enterprise</td><td class="n">336</td><td class="n">$940</td><td class="n">$315,840</td><td class="n">0.7%</td></tr>
+    <tr><td><b>Total</b></td><td class="n"><b>4,200</b></td><td class="n"></td><td class="n"><b>$866,460</b></td><td class="n"></td></tr>
+  </table>
+
+  <h2>Finance’s estimate of the impact</h2>
+  <ul>
+    <li><b>Mid-tier churn rises from 2.1% to 2.6% per month.</b> Basis: the response to our 2024 Entry-tier increase, and
+      two industry pricing studies.</li>
+    <li><b>5% of Mid-tier accounts move down to Entry</b>, once, when the new price takes effect.</li>
+  </ul>
+
+  <h2>Planning conventions (please use these in any model of this decision)</h2>
+  <ul>
+    <li>12-month horizon, starting the month the new price takes effect.</li>
+    <li>Existing accounts only. No new customer acquisition in either scenario.</li>
+    <li>The downgrade happens once, at the change. Downgraded accounts pay the Entry price and churn at the Entry rate from then on.</li>
+    <li>Entry and Enterprise prices and churn rates are unchanged.</li>
+    <li>The comparison is against keeping the current price: Mid churn stays at 2.1% and nobody downgrades.</li>
+  </ul>
+
+  <h2>Recommendation</h2>
+  <p>Proceed with the increase.</p>
+
+  <div class="actions">
+    <a class="btn btn--red" href="CFO_memo_mid-tier_price_increase.md" download>Download the file (.md)</a>
+    <a class="btn btn--ghost" href="email.html">The VP of Sales’s reply</a>
+  </div>
+</main>
+</body>
+</html>
